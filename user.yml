@@ -1,0 +1,13 @@
+---
+- hosts: local
+  connection: local
+  become: yes
+  become_user: root
+  tasks:
+   - name: Create sudo user
+     user:
+       name: testUser
+       password: '<Hashed password>'
+       groups:
+        - sudo
+       state: present
